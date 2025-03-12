@@ -1,0 +1,75 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@drawable/background">
+
+    <!-- Credit Display -->
+
+
+    <ImageView
+        android:id="@+id/item_image"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/drum" />
+
+    <TextView
+        android:id="@+id/credit_balance"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Credits: 100"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        android:gravity="center"
+        android:layout_marginBottom="12dp" />
+
+    <TextView
+        android:id="@+id/item_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Item Name"
+        android:textSize="32sp"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/black"/>
+
+    <TextView
+        android:id="@+id/item_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Price: 0 credits"
+        android:textSize="30sp"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/black"/>
+
+    <RatingBar
+        android:id="@+id/item_rating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:numStars="5"
+        android:rating="0"
+        android:layout_marginTop="8dp" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="16dp">
+
+        <Button
+            android:id="@+id/borrow_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Borrow" />
+
+        <TextView
+            android:id="@+id/borrow_countdown"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:textSize="16sp"
+            android:text="" />
+    </LinearLayout>
+</LinearLayout>
