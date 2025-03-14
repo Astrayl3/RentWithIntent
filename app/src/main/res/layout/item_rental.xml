@@ -5,9 +5,6 @@
     android:padding="16dp"
     android:background="@drawable/background">
 
-    <!-- Credit Display -->
-
-
     <ImageView
         android:id="@+id/item_image"
         android:layout_width="match_parent"

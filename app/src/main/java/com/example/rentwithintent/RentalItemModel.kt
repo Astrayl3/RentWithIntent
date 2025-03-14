@@ -8,6 +8,7 @@ data class RentalItem(
     val price: Int,
     val rating: Float,
     val condition: String,
+    val multiChoiceOptions: List<Pair<String, Int>> = emptyList(), // Default to empty
     var expirationDate: Long? = null
 ) : Parcelable {
 
@@ -16,6 +17,12 @@ data class RentalItem(
         price = parcel.readInt(),
         rating = parcel.readFloat(),
         condition = parcel.readString().orEmpty(),
+        multiChoiceOptions = mutableListOf<Pair<String, Int>>().apply {
+            val size = parcel.readInt()
+            repeat(size) {
+                add(parcel.readString()!! to parcel.readInt())
+            }
+        },
         expirationDate = parcel.readValue(Long::class.java.classLoader) as? Long
     )
 
@@ -24,6 +31,11 @@ data class RentalItem(
         parcel.writeInt(price)
         parcel.writeFloat(rating)
         parcel.writeString(condition)
+        parcel.writeInt(multiChoiceOptions.size)
+        multiChoiceOptions.forEach { (option, cost) ->
+            parcel.writeString(option)
+            parcel.writeInt(cost)
+        }
         parcel.writeValue(expirationDate)
     }
 

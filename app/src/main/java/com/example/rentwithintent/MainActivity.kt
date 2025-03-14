@@ -4,7 +4,6 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
-import java.text.SimpleDateFormat
 import java.util.*
 
 class MainActivity : AppCompatActivity() {
@@ -18,12 +17,12 @@ class MainActivity : AppCompatActivity() {
     private lateinit var borrowButton: Button
     private lateinit var creditBalance: TextView
 
-    private var credits: Int = 100  // Initial balance
+    private var credits: Int = 1000  // Initial balance
 
     private val rentalItems = mutableListOf(
-        RentalItem("Drum", 10, 4.5f, "New"),
-        RentalItem("Guitar", 8, 4.0f, "Good"),
-        RentalItem("Piano", 5, 3.5f, "Fair")
+        RentalItem("Drum", 15, 4.5f, "New"),
+        RentalItem("Guitar", 10, 4.0f, "Good"),
+        RentalItem("Piano", 25, 3.5f, "Fair")
     )
 
     private var currentIndex = 0
